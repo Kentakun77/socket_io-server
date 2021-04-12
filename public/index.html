@@ -19,9 +19,14 @@
         console.log('Perdimos la conexion')
     })
     socket.emit('mensaje', {nombre: 'Alejandro'});
-    socket.on('mensaje', function (payload) {
-        console.log('Respuesta:', payload)
+    socket.on('nuevo-mensaje', function (payload) {
+        console.log('Escuchando:', payload)
     })
+    socket.on('active-bands', function (bands) {
+        console.clear()
+        console.table(bands)
+    })
+
 </script>
 </body>
 </html>
